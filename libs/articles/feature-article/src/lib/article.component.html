@@ -18,7 +18,12 @@
   <div class="container page">
     <div class="row article-content">
       <div class="col-md-12">
-        <div [innerHTML]="(article$ | async)?.body | markdown"></div>
+       <div [innerHTML]="(article$ | async)?.body | markdown"></div>                                                      
+        <ul class="tag-list">                                                                                              
+          <li *ngFor="let tag of (article$ | async)?.tagList" class="tag-default tag-pill tag-outline">                    
+            {{ tag }}                                                                                                      
+          </li>                                                                                                            
+        </ul>   
       </div>
     </div>
     <hr />
